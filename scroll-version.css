@@ -1,0 +1,363 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Hiragino Sans', 'Helvetica Neue', Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.screen-info {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.screen {
+  width: 375px;
+  height: 812px;
+  background: #fff;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Status Bar */
+.status-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 375px;
+  height: 44px;
+  z-index: 100;
+  background: #fff;
+}
+
+.status-bar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Top Navigation */
+.top-navigation {
+  position: sticky;
+  top: 44px;
+  left: 0;
+  width: 375px;
+  height: 44px;
+  z-index: 99;
+  background: #fff;
+}
+
+.top-navigation img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Content Area */
+.content-area {
+  position: relative;
+  margin-top: 10px;
+  left: 16px;
+  width: 359px;
+}
+
+.activity-section {
+  width: 359px;
+  margin-bottom: 9px;
+}
+
+.activity-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.friends-list {
+  width: 343px;
+  height: 166px;
+}
+
+.friends-list img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Ad Banner - Scroll Version */
+.ad-banner-scroll {
+  position: relative;
+  margin: 9px 0 22px 0;
+  width: 375px;
+  height: 48px;
+  background: #fff;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ad-card-scroll {
+  position: relative;
+  width: 343px;
+  height: 48px;
+  border: 1px solid #efefef;
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 13px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* Compact Content (State 1) */
+.ad-compact-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding-right: 50px;
+  transition: opacity 0.4s ease-out;
+}
+
+.ad-thumbnail {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.ad-thumbnail img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+.ad-compact-title {
+  font-size: 13px;
+  font-weight: 400;
+  color: #111;
+  line-height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  margin-right: 12px;
+}
+
+/* Fixed AD Label */
+.ad-label-fixed {
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  transition: opacity 0.4s ease-out;
+}
+
+.ad-icon {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+.ad-icon-white {
+  display: none;
+}
+
+.ad-banner-scroll.affordance .ad-icon-default {
+  display: none;
+}
+
+.ad-banner-scroll.affordance .ad-icon-white {
+  display: block;
+}
+
+.ad-text {
+  font-size: 12px;
+  color: #555;
+  font-weight: 400;
+  line-height: 1;
+  transition: color 0.4s ease-out;
+}
+
+.ad-dot {
+  width: 4px;
+  height: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ad-dot img {
+  width: 2px;
+  height: 2px;
+  display: block;
+}
+
+/* Expanded Content (State 3) */
+.ad-expanded-scroll {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 343px;
+  height: 81px;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0 12px 16px;
+  transition: opacity 0.5s ease-out 0.15s;
+  overflow: hidden;
+}
+
+.ad-content-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.ad-main-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2a2a2a;
+  line-height: 18px;
+  max-width: 164px;
+}
+
+.ad-bottom-info {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.ad-label {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.ad-sponsor-text {
+  font-size: 13px;
+  color: #909090;
+  line-height: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 118px;
+}
+
+.ad-image-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 153px;
+  height: 81px;
+  border-radius: 0 8px 8px 0;
+  overflow: hidden;
+}
+
+.ad-image-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* State: Affordance */
+.ad-banner-scroll.affordance .ad-card-scroll {
+  background: #839fbd;
+  border-color: #839fbd;
+}
+
+.ad-banner-scroll.affordance .ad-compact-title {
+  color: #fff;
+}
+
+.ad-banner-scroll.affordance .ad-text {
+  color: #fff;
+}
+
+/* State: Expanded */
+.ad-banner-scroll.expanded {
+  height: 81px;
+}
+
+.ad-banner-scroll.expanded .ad-card-scroll {
+  height: 81px;
+  background: #fff;
+  border-color: #efefef;
+  padding: 12px 0 12px 16px;
+}
+
+.ad-banner-scroll.expanded .ad-compact-content,
+.ad-banner-scroll.expanded .ad-label-fixed {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ad-banner-scroll.expanded .ad-expanded-scroll {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Big Visual */
+.big-visual {
+  position: relative;
+  width: 375px;
+  height: auto;
+  z-index: 1;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.big-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Extra Content */
+.extra-content {
+  position: relative;
+  width: 375px;
+  background: #fff;
+}
+
+/* Bottom Navigation */
+.bottom-navigation {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 375px;
+  height: 112px;
+  z-index: 98;
+  margin-top: auto;
+}
+
+.bottom-navigation img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll-based Ad Prototype</title>
+  <link rel="stylesheet" href="scroll-version.css">
+</head>
+<body>
+  <div class="screen-info">375 x 812 - Scroll Version</div>
+  <div class="screen" id="screen">
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <img src="https://www.figma.com/api/mcp/asset/b5dc3ffb-ce26-4846-ad91-7a9b53198641" alt="Status Bar">
+    </div>
+
+    <!-- Top Navigation -->
+    <div class="top-navigation">
+      <img src="https://www.figma.com/api/mcp/asset/69b7345c-e30a-4617-98ba-6ee9aac76f70" alt="Top Navigation">
+    </div>
+
+    <!-- Content Area -->
+    <div class="content-area">
+      <!-- Activity Section -->
+      <div class="activity-section">
+        <img src="https://www.figma.com/api/mcp/asset/a354d458-10e7-41b4-a8c1-d21fd90690f8" alt="Activity">
+      </div>
+
+      <!-- Friends List -->
+      <div class="friends-list">
+        <img src="https://www.figma.com/api/mcp/asset/60f20342-a081-42d6-8516-88c4da596bd7" alt="Friends List">
+      </div>
+    </div>
+
+    <!-- Ad Banner -->
+    <div class="ad-banner-scroll" id="adBannerScroll">
+      <div class="ad-card-scroll" id="adCardScroll">
+        <!-- State 1: Initial compact view -->
+        <div class="ad-compact-content" id="adCompactContent">
+          <div class="ad-thumbnail">
+            <img src="https://www.figma.com/api/mcp/asset/021f5388-cd2c-4985-a06a-07c4dc41d0d7" alt="Thumbnail">
+          </div>
+          <p class="ad-compact-title">思い出したいとき私の香り間でChanel N°5</p>
+        </div>
+
+        <!-- AD Label (always visible) -->
+        <div class="ad-label-fixed">
+          <img class="ad-icon ad-icon-default" src="https://www.figma.com/api/mcp/asset/686ab289-ae53-4715-abdc-cd74cc5a7671" alt="AD">
+          <img class="ad-icon ad-icon-white" src="https://www.figma.com/api/mcp/asset/627d36ca-cd6f-4daa-8105-f2cf53d420aa" alt="AD">
+          <span class="ad-text">AD</span>
+        </div>
+
+        <!-- State 3: Expanded content -->
+        <div class="ad-expanded-scroll" id="adExpandedScroll">
+          <div class="ad-content-left">
+            <p class="ad-main-title">思い出したいとき私の香り間でChanel N°5</p>
+            <div class="ad-bottom-info">
+              <div class="ad-label">
+                <img class="ad-icon" src="https://www.figma.com/api/mcp/asset/686ab289-ae53-4715-abdc-cd74cc5a7671" alt="AD">
+                <span class="ad-text">AD</span>
+              </div>
+              <div class="ad-dot">
+                <img src="https://www.figma.com/api/mcp/asset/ddb85fee-c7f8-43d5-993d-a8d1b38071c0" alt="dot">
+              </div>
+              <span class="ad-sponsor-text">CHANELアットコスメ</span>
+            </div>
+          </div>
+          <div class="ad-image-right">
+            <img src="https://www.figma.com/api/mcp/asset/6a329846-ec9b-41ec-9da3-aa56a646d21b" alt="Product">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Big Visual Unit -->
+    <div class="big-visual" id="bigVisualScroll">
+      <img src="https://www.figma.com/api/mcp/asset/f2826669-8d5a-4050-9bbb-d6abb4a380ce" alt="Big Visual">
+    </div>
+
+    <!-- Extra content for scrolling -->
+    <div class="extra-content">
+      <div style="height: 300px;"></div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-navigation">
+      <img src="https://www.figma.com/api/mcp/asset/8f9d9d95-9ea6-4e78-94d6-fabfebbe0330" alt="Bottom">
+    </div>
+  </div>
+
+  <script src="scroll-version.js"></script>
+</body>
+</html>
